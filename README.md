@@ -1,4 +1,14 @@
 # SystemVerilog Implementation of Keccak
 
+## Keccak Modules for X-HEEP and SHA-3 Integration
+
+This repository contains two different Keccak-related SystemVerilog modules, each targeting a specific use case.
+
+- **`keccak_f.sv`** : this is the standalone Keccak-f permutation core, designed to be integrated directly into the X-HEEP platform.
+- **`keccak.sv`** : it implements the full SHA-3 hashing algorithm using the Keccak-f permutation. It includes `keccak_buffer.sv`.
+
+
+## Notes
+
 - The design has been updated to use only 50 32-bit registers of in/out.
 - The OBI interface is not used in the wrapper, so the distinction between ctrl and data registers is not necessary.
