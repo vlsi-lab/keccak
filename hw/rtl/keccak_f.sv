@@ -10,7 +10,6 @@ module keccak_f (
     input [1599:0] Din, // rate input (XORed before round 0)
     output [1599:0] Dout,  // full state after 24 rounds
     output status_d,
-    output status_de,
     output keccak_intr);
 
 
@@ -39,7 +38,6 @@ logic start_dp;
         .ready_dp_i    (permutation_finish),
         .start_dp_o    (start_dp),
         .status_d      (status_d),
-        .status_de     (status_de),
         .keccak_intr   (keccak_intr)
     );
 

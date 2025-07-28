@@ -13,7 +13,7 @@ module keccak_top
 	input  reg_req_t reg_req_i,
     output reg_rsp_t reg_rsp_o,
   
-	output 	    keccak_intr_o
+	output keccak_intr_o
 );
 
    reg_req_t periph_req_i;   
@@ -42,17 +42,16 @@ module keccak_top
 
      
 // wiring signals between control unit and ip
-   wire logic [1599:0] din_keccak, dout_keccak;
+   wire logic[1599:0] din_keccak, dout_keccak;
    assign din_keccak = reg_file_to_ip.data;
 			       			        	
-	keccak i_keccak (
+	keccak_f i_keccak (
 		.clk(clk_i),
 		.rst_n(rst_ni),
-		.start(reg_file_to_ip.ctrl.q),
-		.din(din_keccak),
-		.dout(dout_keccak),
+		.start_i(reg_file_to_ip.ctrl.q),
+		.Din(din_keccak),
+		.Dout(dout_keccak),
 		.status_d(ip_to_reg_file.status.d),
-		.status_de(ip_to_reg_file.status.de),
 		.keccak_intr(keccak_intr_o)
 	);
 
@@ -60,105 +59,55 @@ module keccak_top
 
 	
 	assign ip_to_reg_file.data[49].d = dout_keccak[1599:1568];
-	assign ip_to_reg_file.data[49].de = keccak_intr_o;
 	assign ip_to_reg_file.data[48].d = dout_keccak[1567:1536];
-	assign ip_to_reg_file.data[48].de = keccak_intr_o;
 	assign ip_to_reg_file.data[47].d = dout_keccak[1535:1504];
-	assign ip_to_reg_file.data[47].de = keccak_intr_o;
 	assign ip_to_reg_file.data[46].d = dout_keccak[1503:1472];
-	assign ip_to_reg_file.data[46].de = keccak_intr_o;
 	assign ip_to_reg_file.data[45].d = dout_keccak[1471:1440];
-	assign ip_to_reg_file.data[45].de = keccak_intr_o;
 	assign ip_to_reg_file.data[44].d = dout_keccak[1439:1408];
-	assign ip_to_reg_file.data[44].de = keccak_intr_o;
 	assign ip_to_reg_file.data[43].d = dout_keccak[1407:1376];
-	assign ip_to_reg_file.data[43].de = keccak_intr_o;
 	assign ip_to_reg_file.data[42].d = dout_keccak[1375:1344];
-	assign ip_to_reg_file.data[42].de = keccak_intr_o;
 	assign ip_to_reg_file.data[41].d = dout_keccak[1343:1312];
-	assign ip_to_reg_file.data[41].de = keccak_intr_o;
 	assign ip_to_reg_file.data[40].d = dout_keccak[1311:1280];
-	assign ip_to_reg_file.data[40].de = keccak_intr_o;
 	assign ip_to_reg_file.data[39].d = dout_keccak[1279:1248];
-	assign ip_to_reg_file.data[39].de = keccak_intr_o;
 	assign ip_to_reg_file.data[38].d = dout_keccak[1247:1216];
-	assign ip_to_reg_file.data[38].de = keccak_intr_o;
 	assign ip_to_reg_file.data[37].d = dout_keccak[1215:1184];
-	assign ip_to_reg_file.data[37].de = keccak_intr_o;
 	assign ip_to_reg_file.data[36].d = dout_keccak[1183:1152];
-	assign ip_to_reg_file.data[36].de = keccak_intr_o;
 	assign ip_to_reg_file.data[35].d = dout_keccak[1151:1120];
-	assign ip_to_reg_file.data[35].de = keccak_intr_o;
 	assign ip_to_reg_file.data[34].d = dout_keccak[1119:1088];
-	assign ip_to_reg_file.data[34].de = keccak_intr_o;
 	assign ip_to_reg_file.data[33].d = dout_keccak[1087:1056];
-	assign ip_to_reg_file.data[33].de = keccak_intr_o;
 	assign ip_to_reg_file.data[32].d = dout_keccak[1055:1024];
-	assign ip_to_reg_file.data[32].de = keccak_intr_o;
 	assign ip_to_reg_file.data[31].d = dout_keccak[1023:992];
-	assign ip_to_reg_file.data[31].de = keccak_intr_o;
 	assign ip_to_reg_file.data[30].d = dout_keccak[991:960];
-	assign ip_to_reg_file.data[30].de = keccak_intr_o;
 	assign ip_to_reg_file.data[29].d = dout_keccak[959:928];
-	assign ip_to_reg_file.data[29].de = keccak_intr_o;
 	assign ip_to_reg_file.data[28].d = dout_keccak[927:896];
-	assign ip_to_reg_file.data[28].de = keccak_intr_o;
 	assign ip_to_reg_file.data[27].d = dout_keccak[895:864];
-	assign ip_to_reg_file.data[27].de = keccak_intr_o;
 	assign ip_to_reg_file.data[26].d = dout_keccak[863:832];
-	assign ip_to_reg_file.data[26].de = keccak_intr_o;
 	assign ip_to_reg_file.data[25].d = dout_keccak[831:800];
-	assign ip_to_reg_file.data[25].de = keccak_intr_o;
 	assign ip_to_reg_file.data[24].d = dout_keccak[799:768];
-	assign ip_to_reg_file.data[24].de = keccak_intr_o;
 	assign ip_to_reg_file.data[23].d = dout_keccak[767:736];
-	assign ip_to_reg_file.data[23].de = keccak_intr_o;
 	assign ip_to_reg_file.data[22].d = dout_keccak[735:704];
-	assign ip_to_reg_file.data[22].de = keccak_intr_o;
 	assign ip_to_reg_file.data[21].d = dout_keccak[703:672];
-	assign ip_to_reg_file.data[21].de = keccak_intr_o;
 	assign ip_to_reg_file.data[20].d = dout_keccak[671:640];
-	assign ip_to_reg_file.data[20].de = keccak_intr_o;
 	assign ip_to_reg_file.data[19].d = dout_keccak[639:608];
-	assign ip_to_reg_file.data[19].de = keccak_intr_o;
 	assign ip_to_reg_file.data[18].d = dout_keccak[607:576];
-	assign ip_to_reg_file.data[18].de = keccak_intr_o;
 	assign ip_to_reg_file.data[17].d = dout_keccak[575:544];
-	assign ip_to_reg_file.data[17].de = keccak_intr_o;
 	assign ip_to_reg_file.data[16].d = dout_keccak[543:512];
-	assign ip_to_reg_file.data[16].de = keccak_intr_o;
 	assign ip_to_reg_file.data[15].d = dout_keccak[511:480];
-	assign ip_to_reg_file.data[15].de = keccak_intr_o;
 	assign ip_to_reg_file.data[14].d = dout_keccak[479:448];
-	assign ip_to_reg_file.data[14].de = keccak_intr_o;
 	assign ip_to_reg_file.data[13].d = dout_keccak[447:416];
-	assign ip_to_reg_file.data[13].de = keccak_intr_o;
 	assign ip_to_reg_file.data[12].d = dout_keccak[415:384];
-	assign ip_to_reg_file.data[12].de = keccak_intr_o;
 	assign ip_to_reg_file.data[11].d = dout_keccak[383:352];
-	assign ip_to_reg_file.data[11].de = keccak_intr_o;
 	assign ip_to_reg_file.data[10].d = dout_keccak[351:320];
-	assign ip_to_reg_file.data[10].de = keccak_intr_o;
 	assign ip_to_reg_file.data[9].d  = dout_keccak[319:288];
-	assign ip_to_reg_file.data[9].de = keccak_intr_o;
 	assign ip_to_reg_file.data[8].d  = dout_keccak[287:256];
-	assign ip_to_reg_file.data[8].de = keccak_intr_o;
 	assign ip_to_reg_file.data[7].d  = dout_keccak[255:224];
-	assign ip_to_reg_file.data[7].de = keccak_intr_o;
 	assign ip_to_reg_file.data[6].d  = dout_keccak[223:192];
-	assign ip_to_reg_file.data[6].de = keccak_intr_o;
 	assign ip_to_reg_file.data[5].d  = dout_keccak[191:160];
-	assign ip_to_reg_file.data[5].de = keccak_intr_o;
 	assign ip_to_reg_file.data[4].d  = dout_keccak[159:128];
-	assign ip_to_reg_file.data[4].de = keccak_intr_o;
 	assign ip_to_reg_file.data[3].d  = dout_keccak[127:96];
-	assign ip_to_reg_file.data[3].de = keccak_intr_o;
 	assign ip_to_reg_file.data[2].d  = dout_keccak[95:64];
-	assign ip_to_reg_file.data[2].de = keccak_intr_o;
 	assign ip_to_reg_file.data[1].d  = dout_keccak[63:32];
-	assign ip_to_reg_file.data[1].de = keccak_intr_o;
 	assign ip_to_reg_file.data[0].d  = dout_keccak[31:0];
-	assign ip_to_reg_file.data[0].de = keccak_intr_o;
    
   
 endmodule : keccak_top
