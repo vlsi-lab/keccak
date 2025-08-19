@@ -47,7 +47,7 @@ package pkg_keccak;
     typedef k_plane [NUM_PLANE-1:0]     k_state;
 
 
-    function int ABS (int numberIn);
+    function automatic int ABS (int numberIn);
         ABS = (numberIn < 0) ? -numberIn : numberIn;
     endfunction
 

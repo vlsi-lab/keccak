@@ -46,6 +46,7 @@ module keccak_cu (
       case (State)
 	wait_start : begin
 	   keccak_intr = 0;
+       status_d = 0;
 	   if (start_i && ready_dp_i) begin
 	      start_dp_o = 1;
 	      State_next = do_permutation;
@@ -57,7 +58,7 @@ module keccak_cu (
 	do_permutation : begin
 	   start_dp_o = 0;
 	   status_d = 0;
-	   //keccak_intr = 0;
+	   keccak_intr = 0;
 	   if (counter == 24) begin
 	      //din_keccak_o = 0;
 	      State_next = permutation_finished;
@@ -74,7 +75,7 @@ module keccak_cu (
 	default : begin
 	   start_dp_o = 0;
 	   status_d = 0;
-	   //keccak_intr = 0;
+	   keccak_intr = 0;
 	   State_next = wait_start;
 	end
    endcase
