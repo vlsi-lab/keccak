@@ -12,8 +12,7 @@ module keccak_top
 	input  logic rst_ni,
 	input  reg_req_t reg_req_i,
     output reg_rsp_t reg_rsp_o,
-  
-	output keccak_intr_o
+	output logic keccak_intr_o
 );
 
    reg_req_t periph_req_i;   
