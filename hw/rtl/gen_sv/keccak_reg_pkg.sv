@@ -15,32 +15,32 @@ package keccak_reg_pkg;
 
   typedef struct packed {
     logic [31:0] q;
-    logic        qe;
   } keccak_reg2hw_data_mreg_t;
 
   typedef struct packed {
     logic        q;
-    logic        qe;
   } keccak_reg2hw_ctrl_reg_t;
 
   typedef struct packed {
     logic [31:0] d;
+    logic        de;
   } keccak_hw2reg_data_mreg_t;
 
   typedef struct packed {
     logic        d;
+    logic        de;
   } keccak_hw2reg_status_reg_t;
 
   // Register -> HW type
   typedef struct packed {
-    keccak_reg2hw_data_mreg_t [49:0] data; // [1651:2]
-    keccak_reg2hw_ctrl_reg_t ctrl; // [1:0]
+    keccak_reg2hw_data_mreg_t [49:0] data; // [1600:1]
+    keccak_reg2hw_ctrl_reg_t ctrl; // [0:0]
   } keccak_reg2hw_t;
 
   // HW -> register type
   typedef struct packed {
-    keccak_hw2reg_data_mreg_t [49:0] data; // [1600:1]
-    keccak_hw2reg_status_reg_t status; // [0:0]
+    keccak_hw2reg_data_mreg_t [49:0] data; // [1651:2]
+    keccak_hw2reg_status_reg_t status; // [1:0]
   } keccak_hw2reg_t;
 
   // Register offsets
@@ -96,60 +96,6 @@ package keccak_reg_pkg;
   parameter logic [BlockAw-1:0] KECCAK_DATA_49_OFFSET = 8'h c4;
   parameter logic [BlockAw-1:0] KECCAK_CTRL_OFFSET = 8'h c8;
   parameter logic [BlockAw-1:0] KECCAK_STATUS_OFFSET = 8'h cc;
-
-  // Reset values for hwext registers and their fields
-  parameter logic [31:0] KECCAK_DATA_0_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_1_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_2_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_3_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_4_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_5_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_6_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_7_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_8_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_9_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_10_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_11_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_12_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_13_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_14_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_15_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_16_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_17_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_18_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_19_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_20_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_21_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_22_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_23_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_24_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_25_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_26_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_27_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_28_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_29_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_30_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_31_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_32_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_33_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_34_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_35_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_36_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_37_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_38_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_39_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_40_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_41_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_42_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_43_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_44_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_45_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_46_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_47_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_48_RESVAL = 32'h 0;
-  parameter logic [31:0] KECCAK_DATA_49_RESVAL = 32'h 0;
-  parameter logic [0:0] KECCAK_CTRL_RESVAL = 1'h 0;
-  parameter logic [0:0] KECCAK_STATUS_RESVAL = 1'h 0;
 
   // Register index
   typedef enum int {

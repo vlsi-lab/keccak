@@ -14,8 +14,8 @@
         cname: "data",
         swaccess: "rw",         // SW can write input and later read result
         hwaccess: "hrw",        // HW can read inputs and later write results
-        hwqe: true,
-        hwext: true,
+        //hwqe: true,
+        //hwext: true,
         fields: [
           { bits: "31:0" }
         ]
@@ -26,8 +26,8 @@
       desc: "Trigger the Keccak",
       swaccess: "wo",
       hwaccess: "hro",
-      hwqe: true,
-      hwext: true,
+      //hwqe: true,
+      //hwext: true,
       fields: [
         {
           bits: "0",
@@ -41,8 +41,8 @@
       desc: "Contains status information about the Keccak",
       swaccess: "ro",
       hwaccess: "hwo",
-      hwqe: true,
-      hwext: true,
+      //hwqe: true,
+      //hwext: true,
       fields: [
         {
           bits: "0",
