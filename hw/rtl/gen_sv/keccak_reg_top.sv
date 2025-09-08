@@ -1903,203 +1903,203 @@ module keccak_reg_top #(
     reg_rdata_next = '0;
     unique case (1'b1)
       addr_hit[0]: begin
-        reg_rdata_next[31:0] = data_0_qs;
+        reg_rdata_next[31:0] = hw2reg.data[0].d;
       end
 
       addr_hit[1]: begin
-        reg_rdata_next[31:0] = data_1_qs;
+        reg_rdata_next[31:0] = hw2reg.data[1].d;
       end
 
       addr_hit[2]: begin
-        reg_rdata_next[31:0] = data_2_qs;
+        reg_rdata_next[31:0] = hw2reg.data[2].d;
       end
 
       addr_hit[3]: begin
-        reg_rdata_next[31:0] = data_3_qs;
+        reg_rdata_next[31:0] = hw2reg.data[3].d;
       end
 
       addr_hit[4]: begin
-        reg_rdata_next[31:0] = data_4_qs;
+        reg_rdata_next[31:0] = hw2reg.data[4].d;
       end
 
       addr_hit[5]: begin
-        reg_rdata_next[31:0] = data_5_qs;
+        reg_rdata_next[31:0] = hw2reg.data[5].d;
       end
 
       addr_hit[6]: begin
-        reg_rdata_next[31:0] = data_6_qs;
+        reg_rdata_next[31:0] = hw2reg.data[6].d;
       end
 
       addr_hit[7]: begin
-        reg_rdata_next[31:0] = data_7_qs;
+        reg_rdata_next[31:0] = hw2reg.data[7].d;
       end
 
       addr_hit[8]: begin
-        reg_rdata_next[31:0] = data_8_qs;
+        reg_rdata_next[31:0] = hw2reg.data[8].d;
       end
 
       addr_hit[9]: begin
-        reg_rdata_next[31:0] = data_9_qs;
+        reg_rdata_next[31:0] = hw2reg.data[9].d;
       end
 
       addr_hit[10]: begin
-        reg_rdata_next[31:0] = data_10_qs;
+        reg_rdata_next[31:0] = hw2reg.data[10].d;
       end
 
       addr_hit[11]: begin
-        reg_rdata_next[31:0] = data_11_qs;
+        reg_rdata_next[31:0] = hw2reg.data[11].d;
       end
 
       addr_hit[12]: begin
-        reg_rdata_next[31:0] = data_12_qs;
+        reg_rdata_next[31:0] = hw2reg.data[12].d;
       end
 
       addr_hit[13]: begin
-        reg_rdata_next[31:0] = data_13_qs;
+        reg_rdata_next[31:0] = hw2reg.data[13].d;
       end
 
       addr_hit[14]: begin
-        reg_rdata_next[31:0] = data_14_qs;
+        reg_rdata_next[31:0] = hw2reg.data[14].d;
       end
 
       addr_hit[15]: begin
-        reg_rdata_next[31:0] = data_15_qs;
+        reg_rdata_next[31:0] = hw2reg.data[15].d;
       end
 
       addr_hit[16]: begin
-        reg_rdata_next[31:0] = data_16_qs;
+        reg_rdata_next[31:0] = hw2reg.data[16].d;
       end
 
       addr_hit[17]: begin
-        reg_rdata_next[31:0] = data_17_qs;
+        reg_rdata_next[31:0] = hw2reg.data[17].d;
       end
 
       addr_hit[18]: begin
-        reg_rdata_next[31:0] = data_18_qs;
+        reg_rdata_next[31:0] = hw2reg.data[18].d;
       end
 
       addr_hit[19]: begin
-        reg_rdata_next[31:0] = data_19_qs;
+        reg_rdata_next[31:0] = hw2reg.data[19].d;
       end
 
       addr_hit[20]: begin
-        reg_rdata_next[31:0] = data_20_qs;
+        reg_rdata_next[31:0] = hw2reg.data[20].d;
       end
 
       addr_hit[21]: begin
-        reg_rdata_next[31:0] = data_21_qs;
+        reg_rdata_next[31:0] = hw2reg.data[21].d;
       end
 
       addr_hit[22]: begin
-        reg_rdata_next[31:0] = data_22_qs;
+        reg_rdata_next[31:0] = hw2reg.data[22].d;
       end
 
       addr_hit[23]: begin
-        reg_rdata_next[31:0] = data_23_qs;
+        reg_rdata_next[31:0] = hw2reg.data[23].d;
       end
 
       addr_hit[24]: begin
-        reg_rdata_next[31:0] = data_24_qs;
+        reg_rdata_next[31:0] = hw2reg.data[24].d;
       end
 
       addr_hit[25]: begin
-        reg_rdata_next[31:0] = data_25_qs;
+        reg_rdata_next[31:0] = hw2reg.data[25].d;
       end
 
       addr_hit[26]: begin
-        reg_rdata_next[31:0] = data_26_qs;
+        reg_rdata_next[31:0] = hw2reg.data[26].d;
       end
 
       addr_hit[27]: begin
-        reg_rdata_next[31:0] = data_27_qs;
+        reg_rdata_next[31:0] = hw2reg.data[27].d;
       end
 
       addr_hit[28]: begin
-        reg_rdata_next[31:0] = data_28_qs;
+        reg_rdata_next[31:0] = hw2reg.data[28].d;
       end
 
       addr_hit[29]: begin
-        reg_rdata_next[31:0] = data_29_qs;
+        reg_rdata_next[31:0] = hw2reg.data[29].d;
       end
 
       addr_hit[30]: begin
-        reg_rdata_next[31:0] = data_30_qs;
+        reg_rdata_next[31:0] = hw2reg.data[30].d;
       end
 
       addr_hit[31]: begin
-        reg_rdata_next[31:0] = data_31_qs;
+        reg_rdata_next[31:0] = hw2reg.data[31].d;
       end
 
       addr_hit[32]: begin
-        reg_rdata_next[31:0] = data_32_qs;
+        reg_rdata_next[31:0] = hw2reg.data[32].d;
       end
 
       addr_hit[33]: begin
-        reg_rdata_next[31:0] = data_33_qs;
+        reg_rdata_next[31:0] = hw2reg.data[33].d;
       end
 
       addr_hit[34]: begin
-        reg_rdata_next[31:0] = data_34_qs;
+        reg_rdata_next[31:0] = hw2reg.data[34].d;
       end
 
       addr_hit[35]: begin
-        reg_rdata_next[31:0] = data_35_qs;
+        reg_rdata_next[31:0] = hw2reg.data[35].d;
       end
 
       addr_hit[36]: begin
-        reg_rdata_next[31:0] = data_36_qs;
+        reg_rdata_next[31:0] = hw2reg.data[36].d;
       end
 
       addr_hit[37]: begin
-        reg_rdata_next[31:0] = data_37_qs;
+        reg_rdata_next[31:0] = hw2reg.data[37].d;
       end
 
       addr_hit[38]: begin
-        reg_rdata_next[31:0] = data_38_qs;
+        reg_rdata_next[31:0] = hw2reg.data[38].d;
       end
 
       addr_hit[39]: begin
-        reg_rdata_next[31:0] = data_39_qs;
+        reg_rdata_next[31:0] = hw2reg.data[39].d;
       end
 
       addr_hit[40]: begin
-        reg_rdata_next[31:0] = data_40_qs;
+        reg_rdata_next[31:0] = hw2reg.data[40].d;
       end
 
       addr_hit[41]: begin
-        reg_rdata_next[31:0] = data_41_qs;
+        reg_rdata_next[31:0] = hw2reg.data[41].d;
       end
 
       addr_hit[42]: begin
-        reg_rdata_next[31:0] = data_42_qs;
+        reg_rdata_next[31:0] = hw2reg.data[42].d;
       end
 
       addr_hit[43]: begin
-        reg_rdata_next[31:0] = data_43_qs;
+        reg_rdata_next[31:0] = hw2reg.data[43].d;
       end
 
       addr_hit[44]: begin
-        reg_rdata_next[31:0] = data_44_qs;
+        reg_rdata_next[31:0] = hw2reg.data[44].d;
       end
 
       addr_hit[45]: begin
-        reg_rdata_next[31:0] = data_45_qs;
+        reg_rdata_next[31:0] = hw2reg.data[45].d;
       end
 
       addr_hit[46]: begin
-        reg_rdata_next[31:0] = data_46_qs;
+        reg_rdata_next[31:0] = hw2reg.data[46].d;
       end
 
       addr_hit[47]: begin
-        reg_rdata_next[31:0] = data_47_qs;
+        reg_rdata_next[31:0] = hw2reg.data[47].d;
       end
 
       addr_hit[48]: begin
-        reg_rdata_next[31:0] = data_48_qs;
+        reg_rdata_next[31:0] = hw2reg.data[48].d;
       end
 
       addr_hit[49]: begin
-        reg_rdata_next[31:0] = data_49_qs;
+        reg_rdata_next[31:0] = hw2reg.data[49].d;
       end
 
       addr_hit[50]: begin

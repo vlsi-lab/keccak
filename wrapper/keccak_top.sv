@@ -41,7 +41,7 @@ module keccak_top
 
      
 // wiring signals between control unit and ip
-   wire logic[1599:0] din_keccak, dout_keccak;
+logic[1599:0] din_keccak, dout_keccak;
    assign din_keccak = reg_file_to_ip.data;
 			       			        	
 	keccak_f i_keccak (
@@ -55,8 +55,6 @@ module keccak_top
 	);
 
 
-
-	
 	assign ip_to_reg_file.data[49].d = dout_keccak[1599:1568];
 	assign ip_to_reg_file.data[48].d = dout_keccak[1567:1536];
 	assign ip_to_reg_file.data[47].d = dout_keccak[1535:1504];
@@ -107,6 +105,5 @@ module keccak_top
 	assign ip_to_reg_file.data[2].d  = dout_keccak[95:64];
 	assign ip_to_reg_file.data[1].d  = dout_keccak[63:32];
 	assign ip_to_reg_file.data[0].d  = dout_keccak[31:0];
-   
-  
+
 endmodule : keccak_top
