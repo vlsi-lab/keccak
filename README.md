@@ -2,12 +2,6 @@
 
 A complete SystemVerilog implementation of the Keccak-f[1600] permutation function for X-HEEP and SHA-3 integration. This repository contains both standalone Keccak core modules and SoC-ready implementations with register interfaces.
 
-## Authors
-
-- Alessandra Dolmeta - alessandra.dolmeta@polito.it
-- Valeria Piscopo - valeria.piscopo@polito.it
-- Mattia Mirigaldi - mattia.mirigaldi@polito.it
-
 ## Repository Structure
 
 ### [data/](data/)
@@ -154,6 +148,13 @@ Both scripts will:
 ## License
 
 See [LICENSE](LICENSE) for details.
+
+## Authors
+
+- Alessandra Dolmeta - alessandra.dolmeta@polito.it
+- Valeria Piscopo - valeria.piscopo@polito.it
+- Mattia Mirigaldi - mattia.mirigaldi@polito.it
+
 
 ## References
 
