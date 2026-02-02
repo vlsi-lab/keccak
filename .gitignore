@@ -1,0 +1,7 @@
+# Questa/ModelSim waveform database
+*.wlf
+
+# Questa/ModelSim transcripts
+transcript
+transcript.*
+transcript*
