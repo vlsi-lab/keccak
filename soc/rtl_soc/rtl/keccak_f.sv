@@ -2,7 +2,6 @@
 // Authors:      Alessandra Dolmeta - alessandra.dolmeta@polito.it                      //
 //               Valeria Piscopo    - valeria.piscopo@polito.it                         //
 //               Mattia Mirigaldi    - mattia.mirigaldi@polito.it                       //
-// Design Name:  pkg_keccak                                                             //
 // Language:     SystemVerilog                                                          //
 // Based on the designed of Michal Peeters and Gilles Van Assche.                       //
 //                                                                                      //
