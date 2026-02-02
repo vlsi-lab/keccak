@@ -92,19 +92,6 @@ Implements a single Keccak round with five steps:
 4. **Chi** (χ) - Non-linear mixing
 5. **Iota** (ι) - Round constant addition
 
-## RTL vs RTL_OPT: Implementation Differences
-
-The primary difference between [src/rtl/](src/rtl/) and [src/rtl_opt/](src/rtl_opt/) is in the **round constant generation**:
-
-| Feature | RTL (Standard) | RTL_OPT (Optimized) |
-|---------|----------------|---------------------|
-| Round constant width | 64-bit | 8-bit |
-| Iota step implementation | Full 64-bit XOR | Optimized 8-bit XOR |
-| Hardware area | Larger | Smaller |
-| Use case | Performance-oriented | Area-constrained designs |
-
-Both implementations are functionally equivalent and produce identical Keccak-f[1600] outputs.
-
 ## SoC Integration Notes
 
 The design uses **50 32-bit registers** for input/output (defined in [keccak_reg_top.sv](soc/rtl_soc/rtl/gen_sv/keccak_reg_top.sv)):
