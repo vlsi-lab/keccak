@@ -1,5 +1,6 @@
 # Questa/ModelSim waveform database
 *.wlf
+work
 
 # Questa/ModelSim transcripts
 transcript
