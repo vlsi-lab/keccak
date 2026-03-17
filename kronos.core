@@ -1,0 +1,29 @@
+CAPI=2:
+
+# Copyright 2022 PoliTO
+# Solderpad Hardware License, Version 2.1, see LICENSE.md for details.
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+
+name: vlsi:polito:mcu_kronos
+description: Keccak tightly coupled
+
+filesets: 
+
+  kronos:
+    files:
+    - hw/rtl/include/cv32e40px_core_v_xif_pkg.sv
+    - hw/rtl/include/cv32e40px_pkg.sv
+    - hw/rtl/include/kronos_pkg.sv
+    - hw/rtl/id_stage.sv
+    - hw/rtl/commit_stage.sv
+    - hw/rtl/rol32.v
+    - hw/rtl/kronos.sv
+    - hw/rtl/kronos_top.sv
+    - hw/rtl/kronos_wrapper.sv
+    file_type: systemVerilogSource
+
+targets:
+  default: &default_target
+    filesets:
+    - kronos
+    toplevel: [kronos_wrapper]
