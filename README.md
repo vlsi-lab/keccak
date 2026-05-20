@@ -20,9 +20,15 @@ The repeated composition of these steps provides diffusion, confusion, and resis
 - `sw/main.c`: software-side Keccak usage/example
 - `sw/Makefile`: software build flow
 
-## Looking For The Standalone RTL/Simulation Module?
+## Branches
 
-All standalone hardware RTL, testbench, and ModelSim scripts were moved to branch:
+- `main`: software-only Keccak snapshot and theory notes
+- `loosely-standalone`: standalone RTL core and ModelSim verification flow
+- `loosely_cva6`: loosely coupled 64-bit CVA6 integration overlay and usage notes
+
+## Looking For More Than The Software Snapshot?
+
+For the standalone RTL Keccak module, testbench, and ModelSim scripts, use:
 
 - `loosely-standalone`
 
@@ -33,3 +39,13 @@ git checkout loosely-standalone
 ```
 
 That branch README keeps the complete standalone module description and simulation workflow.
+
+For the loosely coupled CVA6 integration overlay, use:
+
+- `loosely_cva6`
+
+```bash
+git checkout loosely_cva6
+```
+
+That branch explains how the standalone Keccak core is wrapped as a 64-bit AXI-mapped peripheral and how it is used and tested inside the CVA6 flow.
