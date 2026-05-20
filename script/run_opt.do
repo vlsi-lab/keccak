@@ -2,9 +2,8 @@
 # ModelSim .do file for Keccak-f[1600] Testbench
 # =============================================================================
 # Usage in ModelSim:
-#   1. Open ModelSim
-#   2. Change to the directory containing your design files
-#   3. Run: do run_keccak_tb.do
+#   1. cd to the repository root
+#   2. Run: vsim -do script/run_opt.do
 # =============================================================================
 
 # Quit any previous simulation

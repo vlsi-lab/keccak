@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+_sourced=0
+if [[ "${BASH_SOURCE[0]}" != "$0" ]]; then
+  _sourced=1
+fi
+
+# Resolve repository root regardless of invocation directory.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Load common environment setup if available.
+if [[ -f "$HOME/env.sh" ]]; then
+  # shellcheck disable=SC1090
+  source "$HOME/env.sh" >/dev/null 2>&1 || true
+fi
+
+if ! command -v vsim >/dev/null 2>&1; then
+  echo "Error: vsim not found in PATH."
+  echo "Hint: source your EDA environment first (for example: source ~/env.sh)."
+  if [[ $_sourced -eq 1 ]]; then
+    return 1
+  fi
+  exit 1
+fi
+
+if ! cd "$REPO_ROOT"; then
+  echo "Error: unable to cd to repository root: $REPO_ROOT"
+  if [[ $_sourced -eq 1 ]]; then
+    return 1
+  fi
+  exit 1
+fi
+
+vsim "$@" -do script/run.do
+_rc=$?
+
+if [[ $_sourced -eq 1 ]]; then
+  return $_rc
+fi
+exit $_rc

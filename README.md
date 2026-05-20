@@ -103,15 +103,34 @@ The design uses **50 32-bit registers** for input/output (defined in [keccak_reg
 
 ## Simulation Instructions
 
+### Prerequisites
+
+Make sure ModelSim/Questa is available in your shell.
+
+```bash
+source ~/env.sh
+```
+
+If `vsim` is still missing after this step, contact your lab/system admin for the correct EDA module setup.
+
 ### Running Standard RTL Simulation
 ```bash
 cd /path/to/keccak
-vsim -do script/run.do
+source ./script/run
 ```
 
 ### Running Optimized RTL Simulation
 ```bash
 cd /path/to/keccak
+source ./script/run_opt
+```
+
+Using `source` keeps your current shell session open after the simulation finishes.
+
+### Direct ModelSim Commands (Alternative)
+```bash
+cd /path/to/keccak
+vsim -do script/run.do
 vsim -do script/run_opt.do
 ```
 
